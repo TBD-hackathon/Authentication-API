@@ -2,6 +2,9 @@
 
 A simple CRUD API application with Node.js and Express, including Swagger documentation for API endpoints.
 
+made by carlos lobo and paola solano
+
+
 ## Project Structure
 
 RESTAPI/
