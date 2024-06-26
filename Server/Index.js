@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger.json');
 
 const app = express();
 const port = 3000;
@@ -10,6 +12,9 @@ const dataFilePath = path.join(__dirname, '../Data/data.json');
 // Middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../View')));
+
+// Swagger setup
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Helper functions to read and write data from/to JSON file
 const readDataFromFile = () => {
@@ -26,11 +31,6 @@ const writeDataToFile = (data) => {
 };
 
 // Routes
-
-// Root route (no longer needed as index.html is served as a static file)
-// app.get('/', (req, res) => {
-//     res.send('Welcome to the REST API');
-// });
 
 // Create (POST)
 app.post('/items', (req, res) => {
@@ -80,4 +80,5 @@ app.delete('/items/:id', (req, res) => {
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Swagger UI is running on http://localhost:${port}/api-docs`);
 });
