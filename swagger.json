@@ -3,7 +3,8 @@
     "info": {
         "title": "Simple CRUD API",
         "version": "1.0.0",
-        "description": "A simple CRUD API application with Node.js and Express"
+        "description": "A simple CRUD API application with Node.js and Express",
+        "team": "foo"
     },
     "servers": [
         {
