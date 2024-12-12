@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Authentication API",
+        "title": "frontend-team",
         "version": "1.0.0",
         "description": "A simple CRUD API application with Node.js and Express",
         "team": "foo",
